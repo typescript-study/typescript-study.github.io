@@ -57,7 +57,7 @@ categories:
 
 #### scripts
 
-> 개인적으로 가장 `package.j0son` 파일을 열었을 때, 가장 먼저 보는 항목
+> 개인적으로 가장 `package.json` 파일을 열었을 때, 가장 먼저 보는 항목
 >
 > **참고링크**
 >
