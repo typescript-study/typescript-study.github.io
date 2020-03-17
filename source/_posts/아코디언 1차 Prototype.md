@@ -22,8 +22,31 @@
 
 1. `vue component`  또는 `web component` 도입 - ∵  `smartAdmin4` 또한 템플릿 엔진이 `handlebars`를 사용하고 있었고, 불필요 렌더링이 존재
 
-![image-20200317112910181](https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317112910181.png)
-
+   ```html
+   # 기존 HTML 코드 방식
+   <div class="panel">
+     <div class="panel-hdr text-primary">
+       <h1>
+         제목
+       </h1>
+       <div class="panel-toolbar"></div>
+     </div>
+     <div class="panel-container collapse show">					
+       <div class="panel-content">
+         내용
+       </div>
+     </div>
+   </div>
+   
+   # 웹 컴포넌트 코드 방식
+   <basic-panel width="500px" height="500px">
+       <h1>제목 입력</h1>
+       <p>내용 입력</p>
+   </basic-panel>
+   
+   # 더 명시적이고, 복잡한 엘리먼트일 수록, 재사용이 쉬워짐
+   # 많이 사용되는 엘리먼트일수록 많은 양의 HTML 코드 중복을 피할 수 있음
+   ```
 
 2. 타입스크립트 도입
 
