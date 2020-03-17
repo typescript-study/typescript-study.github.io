@@ -1,3 +1,13 @@
+---
+title: Accordion FE 1차 Prototype
+toc: true
+date: 2020-03-17 12:39:05
+tags: 
+    - Accordion
+categories: 
+    - Accordion
+---
+
 # Accordion Front End 1차 Prototype
 
 ## 기존 -> 변경 요점
@@ -9,11 +19,6 @@
 ### 기존
 
 기존 템플릿 엔진으로 [handlebars](https://handlebarsjs.com/)를 사용, 렌더링할 때마다 전체 DOM이 항상 업데이트 되서 불필요한 렌더링 발생 - 각 URL마다 `HTML`파일을 만들어 불러 사용함
-
-|                             기존                             |                             개선                             |
-| :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200316135641907.png" width="400"> | <img src="https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200316135935043.png" width="400"> |
-
 
 ### 변경 및 개선사항
 
@@ -57,7 +62,8 @@
 
 |                             기존                             |                             개선                             |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200316135641907.png" width="400"> | <img src="https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200316135935043.png" width="400"> |
+| ![기존](https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200316135641907.png) | ![개선](https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200316135935043.png) |
+
 
 
 4. `SPA` 렌더링 - 클라이언트 사이드 렌더링
@@ -92,11 +98,11 @@
 
 |                             기존                             |                        2. 로그인 하기                        |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="https://user-images.githubusercontent.com/26294469/74116605-af672800-4bf7-11ea-9aa5-f7d01670be79.png" width="400"> | <img src="https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317093347398.png" width="400"> |
+| ![기존](https://user-images.githubusercontent.com/26294469/74116605-af672800-4bf7-11ea-9aa5-f7d01670be79.png) | ![개선](https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317093347398.png) |
 
 |                             기존                             |                             변경                             |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317094135965.png" width="400"> | <img src="https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317093955695.png" width="400"> |
+| ![기존](https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317094135965.png) | ![개선](https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317093955695.png) |
 
 ##### Pod/ Project/ Service/ Nodes 버튼
 
@@ -113,7 +119,7 @@ Hover 애니메이션 추가
 
 |                             기존                             |                             변경                             |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317094343669.png" width="400"> | <img src="https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317094440833.png" width="400"> |
+| ![기존](https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317094343669.png) | ![개선](https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317094440833.png) |
 
 ##### 서비스/ Node 테이블 
 
