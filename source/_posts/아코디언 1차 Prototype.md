@@ -131,7 +131,7 @@ Hover 애니메이션 추가
 
 ### Route
 
-![Route](https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317101819139.png)
+<img src="https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317101819139.png" height="1000"/>
 
 현재는 페이지 레이아웃 작업이 아닌 UI Element (차트, 버튼, 사이드바, 상단바 등)에 집중하고 있음
 
