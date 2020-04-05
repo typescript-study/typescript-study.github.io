@@ -244,15 +244,25 @@ interface PersonType {
 
 ## 📝p177. `type` 명명법
 
+<<<<<<< HEAD
 > 몰랐던 부분
 
 `type`는 앞이 대문자가 아님
+=======
+>  `type`는 대문자로 시작, 책은 소문자로 시작되서 이상해서 레퍼런스를 찾아봄
+>
+> 대문자로 시작하는게 표준 케이스인 것 같음
+>>>>>>> 69d06d879cf539e94f86963fe76ebff54737f05b
 
 ```typescript
 type calcType = (a: number, b: number) => number;
 ```
 
+<<<<<<< HEAD
 
+=======
+![공식 레퍼런스](https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200323110341117.png)
+>>>>>>> 69d06d879cf539e94f86963fe76ebff54737f05b
 
 ## 📝p179. jquery -> VanillaJS
 

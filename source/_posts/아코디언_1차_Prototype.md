@@ -1,6 +1,10 @@
 ---
 title: Accordion FE 1차 Prototype
+<<<<<<< HEAD
 toc: true
+=======
+toc: false
+>>>>>>> 69d06d879cf539e94f86963fe76ebff54737f05b
 date: 2020-03-17 12:39:05
 tags: 
     - Accordion
@@ -136,7 +140,11 @@ Hover 애니메이션 추가
 
 ### Route
 
+<<<<<<< HEAD
 ![Route](https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317101819139.png)
+=======
+<img src="https://raw.githubusercontent.com/taeuk-gang/save-image-repo/image/img/image-20200317101819139.png" height="1000" style="height: 90vh;" />
+>>>>>>> 69d06d879cf539e94f86963fe76ebff54737f05b
 
 현재는 페이지 레이아웃 작업이 아닌 UI Element (차트, 버튼, 사이드바, 상단바 등)에 집중하고 있음
 
