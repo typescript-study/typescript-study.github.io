@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>Quick Start Typescript ~ 9장 정리 | Typescript Study</title>
+    
+    
+        <meta name="keywords" content="Typescript">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="📖 Quick Start Typescript 을 읽고, 간단히 몰랐던 부분이나 중요하다고 생각되는 부분을 작성  9장 고급 타입📝315p. 유니언 타입1const x: string | number;  📝317p. 타입 가드typeof123456789function myIndexOf(x: number | string, y: string) &amp;#123;">
+<meta name="keywords" content="Typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quick Start Typescript ~ 9장 정리">
+<meta property="og:url" content="https://typescript-study.github.io/wiki/Typescript quick start -9장/index.html">
+<meta property="og:site_name" content="Typescript Study">
+<meta property="og:description" content="📖 Quick Start Typescript 을 읽고, 간단히 몰랐던 부분이나 중요하다고 생각되는 부분을 작성  9장 고급 타입📝315p. 유니언 타입1const x: string | number;  📝317p. 타입 가드typeof123456789function myIndexOf(x: number | string, y: string) &amp;#123;">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2020-04-12T17:58:16.711Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quick Start Typescript ~ 9장 정리">
+<meta name="twitter:description" content="📖 Quick Start Typescript 을 읽고, 간단히 몰랐던 부분이나 중요하다고 생각되는 부분을 작성  9장 고급 타입📝315p. 유니언 타입1const x: string | number;  📝317p. 타입 가드typeof123456789function myIndexOf(x: number | string, y: string) &amp;#123;">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Typescript Study" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Typescript Study</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">Main</a>
+                
+                    <a class="main-nav-link" href="/archives">TimeLine</a>
+                
+                    <a class="main-nav-link" href="/categories">Category</a>
+                
+                    <a class="main-nav-link" href="/tags">Tag</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">Main</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">TimeLine</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Category</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tag</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>카테고리</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Accordion
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/Accordion-FE_prototype-v2_계획/">Accordion FE 2차 Prototype 준비사항</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Typescript
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/Typescript quick start -4장/">Quick Start Typescript ~ 4장 정리</a></li>  <li class="file"><a href="/wiki/Typescript quick start -5장/">Quick Start Typescript ~ 5장 정리</a></li>  <li class="file"><a href="/wiki/Typescript quick start -6장/">Quick Start Typescript ~ 6장 정리</a></li>  <li class="file"><a href="/wiki/Typescript quick start -7장/">Quick Start Typescript ~ 7장 정리</a></li>  <li class="file"><a href="/wiki/Typescript quick start -8장/">Quick Start Typescript ~ 8장 정리</a></li>  <li class="file active"><a href="/wiki/Typescript quick start -9장/">Quick Start Typescript ~ 9장 정리</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Typescript quick start -9장" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Typescript/">Typescript</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Typescript/">Typescript</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/Typescript quick start -9장/">
+            <time datetime="2020-04-12T09:39:05.000Z" itemprop="datePublished">2020-04-12</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taeuk-gang/taeuk-gang.github.io/raw/writing/source/_posts/Typescript quick start -9장.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taeuk-gang/taeuk-gang.github.io/edit/writing/source/_posts/Typescript quick start -9장.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taeuk-gang/taeuk-gang.github.io/commits/writing/source/_posts/Typescript quick start -9장.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Quick Start Typescript ~ 9장 정리
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">카탈로그</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#9장-고급-타입"><span class="toc-number">1.</span> <span class="toc-text">9장 고급 타입</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#📝315p-유니언-타입"><span class="toc-number">1.1.</span> <span class="toc-text">📝315p. 유니언 타입</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#📝317p-타입-가드"><span class="toc-number">1.2.</span> <span class="toc-text">📝317p. 타입 가드</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof"><span class="toc-number">1.2.1.</span> <span class="toc-text">typeof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#instanceof"><span class="toc-number">1.2.2.</span> <span class="toc-text">instanceof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#📝320p-고급-타입들"><span class="toc-number">1.3.</span> <span class="toc-text">📝320p. 고급 타입들</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#문자열-리터럴-타입"><span class="toc-number">1.3.1.</span> <span class="toc-text">문자열 리터럴 타입</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#룩업-타입-인덱스-타입"><span class="toc-number">1.3.2.</span> <span class="toc-text">룩업 타입 (= 인덱스 타입)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#non-nullable-타입"><span class="toc-number">1.3.3.</span> <span class="toc-text">non-nullable 타입</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#never-타입"><span class="toc-number">1.3.4.</span> <span class="toc-text">never 타입</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this-타입"><span class="toc-number">1.3.5.</span> <span class="toc-text">this 타입</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#인터페이스에-this-사용-예시"><span class="toc-number">1.3.5.1.</span> <span class="toc-text">인터페이스에  this 사용 예시</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#플루언트-인터페이스-패턴-플루언트-패턴"><span class="toc-number">1.3.5.2.</span> <span class="toc-text">플루언트 인터페이스 패턴 (플루언트 패턴)</span></a></li></ol></li></ol></li></ol></li></ol>
+                </div>
+            
+        
+        
+            <blockquote>
+<p>📖 Quick Start Typescript 을 읽고, 간단히 몰랐던 부분이나 중요하다고 생각되는 부분을 작성</p>
+</blockquote>
+<h1 id="9장-고급-타입"><a href="#9장-고급-타입" class="headerlink" title="9장 고급 타입"></a>9장 고급 타입</h1><h2 id="📝315p-유니언-타입"><a href="#📝315p-유니언-타입" class="headerlink" title="📝315p. 유니언 타입"></a>📝315p. 유니언 타입</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x: <span class="built_in">string</span> | <span class="built_in">number</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="📝317p-타입-가드"><a href="#📝317p-타입-가드" class="headerlink" title="📝317p. 타입 가드"></a>📝317p. 타입 가드</h2><h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myIndexOf</span>(<span class="params">x: <span class="built_in">number</span> | <span class="built_in">string</span>, y: <span class="built_in">string</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> x === <span class="string">`string`</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> x.indexOf(y);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myIndexOf(<span class="string">`hello`</span>, <span class="string">`e`</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">diff</span>(<span class="params">x: Cat | Dog</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x <span class="keyword">instanceof</span> Dog) &#123;</span><br><span class="line">       ... </span><br><span class="line">       <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="📝320p-고급-타입들"><a href="#📝320p-고급-타입들" class="headerlink" title="📝320p. 고급 타입들"></a>📝320p. 고급 타입들</h2><h3 id="문자열-리터럴-타입"><a href="#문자열-리터럴-타입" class="headerlink" title="문자열 리터럴 타입"></a>문자열 리터럴 타입</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> event; <span class="string">'keyup'</span> = <span class="string">'keyup'</span>;	<span class="comment">// O</span></span><br><span class="line"><span class="keyword">let</span> event: <span class="string">'keyup'</span> = <span class="string">'keyup2'</span>;	<span class="comment">// error</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> EventType = <span class="string">'keyup'</span> | <span class="string">'mouseover'</span>;</span><br><span class="line"><span class="keyword">const</span> myEvent: EventType = <span class="string">'keyup'</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="룩업-타입-인덱스-타입"><a href="#룩업-타입-인덱스-타입" class="headerlink" title="룩업 타입 (= 인덱스 타입)"></a>룩업 타입 (= 인덱스 타입)</h3><p><code>keyof</code> 명령어를 통해 타입 T의 하위 타입을 생성, 타입 T는 여러 타입으로 이뤄진 유니언이나 인터페이스 타입을 의미</p>
+<p>확장성을 고려해 <code>interface</code>를 도입</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Profile &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    gender: <span class="built_in">string</span>;</span><br><span class="line">    age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이 인터페이스를 <code>keyof</code>를 활용하여 룩업 타입으로 선언</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// # 1</span></span><br><span class="line"><span class="comment">// 이렇게 선언된 변수는 name , gener, age 중 하나를 할당 받기 가능</span></span><br><span class="line"><span class="keyword">type</span> Profile1 = keyof Profile;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> pValue: Profile1 = <span class="string">'name'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// # 2</span></span><br><span class="line"><span class="comment">// 배열 타입의 내장 속성인, length, push, pop, concat 등을 할당받아 사용 가능</span></span><br><span class="line"><span class="keyword">type</span> Profile2 = keyof Profile[];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> pValue2: Profile2 = <span class="string">'length'</span>;</span><br><span class="line"><span class="keyword">let</span> pValue3: Profile2 = <span class="string">'push'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// # 3</span></span><br><span class="line"><span class="comment">// ??? 이해 안되는 부분</span></span><br><span class="line"><span class="comment">// 어느 문자열이든 입력 가능한건가?</span></span><br><span class="line"><span class="keyword">type</span> Profile3: keyof &#123; [x: <span class="built_in">string</span>]: Profile &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> pValue4: Profile3 = <span class="string">`hello`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// # 4</span></span><br><span class="line"><span class="comment">// name의 string 타입을 전달, 타입이 string일 때 접근 가능한 내장 속성 이용 가능</span></span><br><span class="line"><span class="keyword">type</span> Profile4 = keyof Profile[<span class="string">`name`</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> pValue5: Profile4 = <span class="string">`length`</span>;</span><br><span class="line"><span class="keyword">let</span> pValue6: Profile4 = <span class="string">`abcd`</span>;	<span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="non-nullable-타입"><a href="#non-nullable-타입" class="headerlink" title="non-nullable 타입"></a>non-nullable 타입</h3><p>타입스크립트 2.0 이전에는 <code>null</code> 이나 <code>undefined</code>는 모든 타입의 변수에 할당할 수 있었음</p>
+<p>그러나, <code>tsconfig.json</code>에 <code>strictNullCheck</code>을 true로 바꾸면, <code>null</code>과 <code>undefined</code>가 자동으로 모든 타입의 할당되지 않고 별도로 타입으올 관리해줘야함.</p>
+<h3 id="never-타입"><a href="#never-타입" class="headerlink" title="never 타입"></a>never 타입</h3><p><code>never</code>는 모든 타입의 하위 타입으로 사용할 수 있지만, <code>any</code>만 할당될 수 없다.</p>
+<p><strong>사용용도</strong></p>
+<ol>
+<li>함수에 닿을 수 없는 코드 영역이 있어 반환값이 존재하지 않을 때</li>
+<li>함수에 <code>throw</code>객체가 반환되어, 오류가 발생할 때</li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> neverFunc = (): <span class="function"><span class="params">never</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// console.log(); &lt;- 닿을 수 없음</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> resultNever: never = neverFunc();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">error</span>(<span class="params">message: <span class="built_in">string</span></span>): <span class="title">never</span> </span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="this-타입"><a href="#this-타입" class="headerlink" title="this 타입"></a>this 타입</h3><p><code>this</code> 타입을 다형적 this 타입이라고도 함, 선언 위치에 따라 참조하는 대상이 달라지기 때문</p>
+<h4 id="인터페이스에-this-사용-예시"><a href="#인터페이스에-this-사용-예시" class="headerlink" title="인터페이스에  this 사용 예시"></a>인터페이스에  <code>this</code> 사용 예시</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> ListItem &#123;</span><br><span class="line">    getHead(): <span class="keyword">this</span>;</span><br><span class="line">    getTail(): <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="플루언트-인터페이스-패턴-플루언트-패턴"><a href="#플루언트-인터페이스-패턴-플루언트-패턴" class="headerlink" title="플루언트 인터페이스 패턴 (플루언트 패턴)"></a>플루언트 인터페이스 패턴 (플루언트 패턴)</h4><p>그냥 자기자신 반환해서 체이닝하는 패턴</p>
+<blockquote>
+<p>개인적으로 이런 형식으로 많이 사용했었음</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Mycalc = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        val: <span class="number">0</span>,</span><br><span class="line">        plus(num) &#123;</span><br><span class="line">            <span class="keyword">this</span>.val += num;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        minus(num) &#123;</span><br><span class="line">            <span class="keyword">this</span>.val -= num;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Mycalc().plus(<span class="number">3</span>).minus(<span class="number">2</span>).val	<span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+    
+        <a href="/wiki/Typescript quick start -8장/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">이전 글</strong>
+            <div class="article-nav-title">Quick Start Typescript ~ 8장 정리</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+    <script src="https://utteranc.es/client.js"
+        repo="Jaeyoung-blog/jaeyoung-blog.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Taeuk Kang &copy; 2020 
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <!-- <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a> -->
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
